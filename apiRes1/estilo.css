@@ -1,0 +1,59 @@
+
+*,  *:after, *:before {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 3em;
+    color: orange;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    border: 10px solid blueviolet;
+    border-radius: 10px;
+    width: 1400px;
+    margin: 0 130px 0 130px;
+    padding: 40px 100px;
+}
+
+.boton {
+    cursor: pointer;
+}
+
+.producto {
+    background-color: #333;
+    color: white;
+    margin: auto;
+    padding: 30px;
+    border: 7px solid blueviolet;
+    border-radius: 10px;
+    width: 900px;
+}
+.t1 {
+    width: 600px;
+    background-color: white;
+    margin: auto;
+}
+table {
+    
+}
+
+th {
+    font-size: 1.3em;
+    background-color: tomato;
+    color: white;
+}
+
+tr {
+    line-height: 2em;
+}
+tr:nth-child(even) {
+    background-color: #ccc;
+}
+tr:nth-child(odd) {
+    background-color: lightgreen;
+}

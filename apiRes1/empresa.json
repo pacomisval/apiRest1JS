@@ -1,0 +1,64 @@
+{
+  "articulos": [
+    {
+      "id": 1,
+      "nombre": "I7 Lenovo",
+      "descripcion": "Portatil i7",
+      "precio": 100
+    },
+    {
+      "id": "10",
+      "nombre": "Cafetera LG",
+      "descripcion": "Modelo superior capsulas",
+      "precio": "345"
+    },
+    {
+      "id": 100,
+      "nombre": "HP2 1500L",
+      "descripcion": "Impresora Tinta",
+      "precio": 200
+    },
+    {
+      "id": "99",
+      "nombre": "HP 5M00K",
+      "descripcion": "Impresora Laser",
+      "precio": "400"
+    },
+    {
+      "id": "25",
+      "nombre": "Freidora Industrial M5",
+      "descripcion": "Capacidad Ilimitada",
+      "precio": "240"
+    },
+    {
+      "nombre": "HP 5M00K NEW",
+      "descripcion": "Impresora Laser",
+      "precio": "1400",
+      "id": 101
+    },
+    {
+      "id": "23",
+      "nombre": "Televisor Plasma SL",
+      "descripcion": "55 inch width LONG",
+      "precio": "650"
+    }
+  ],
+  "clasificaciones": [
+    {
+      "nombre": "Drama",
+      "id": 1
+    },
+    {
+      "nombre": "Comedia",
+      "id": 2
+    },
+    {
+      "nombre": "Documental",
+      "id": 3
+    },
+    {
+      "nombre": "Accion",
+      "id": 4
+    }
+  ]
+}

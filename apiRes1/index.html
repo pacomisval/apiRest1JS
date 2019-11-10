@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ApiRest empresa</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>ApiRest empresa</h1>
+    <br>
+    <div class="contenedor">
+        <button class="boton" onclick="getText()">GET obtener todos Text</button>
+        <button class="boton" onclick="getJson()">GET obtener todos JSON</button>
+        <button class="boton" onclick="conseguirId()">GET obtener por Id Text</button>
+        <button class="boton" onclick="conseguirId()">GET obtener por Id JSON</button>
+        <button class="boton" onclick="introDatosPost()">POST introducir en Text</button>
+        <button class="boton" onclick="postJson()">POST introducir en JSON</button>
+        <button class="boton" onclick="putText()">PUT actualizar Text</button>
+        <button class="boton" onclick="delText()">DELETE Text</button>
+        <button class="boton" onclick="patchText()">PATCH actualizar Text</button>
+    </div>
+    <br><br>
+    <div id="productInfo" class="producto"></div>
+    <!-- <div id="proInfo" class="producto"></div> -->
+    <script src="main.js"></script>
+</body>
+</html>

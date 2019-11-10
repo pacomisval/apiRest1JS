@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+
+function getText()
+{
+	var http = new XMLHttpRequest();
+	http.open('GET', 'http://localhost:3000/articulos', true);
+	http.send();
+	http.addEventListener('readystatechange', function() 
+		{
+			if(http.readyState === 4 && http.status === 200) {
+								console.log(http.responseText);
+								document.getElementById("productInfo").innerHTML = http.responseText;
+		}
+	});
+
+}
+
+
+function getJson()
+{
+	var http = new XMLHttpRequest();
+	http.open('GET', 'http://localhost:3000/articulos', true);
+	http.send();
+	http.addEventListener('readystatechange', function() 
+		{
+			if(http.readyState === 4 && http.status === 200) {
+							var prods = JSON.parse(http.responseText); // prod = [{"id": “valor id”, "nombre":"nombre del articulo"..... },{},{}]					
+							console.log(prods);
+							console.log(prods.length);
+		}
+	});
+
+}
+
+function getIdText()
+{
+	idProd=100;
+	var http = new XMLHttpRequest();
+	http.open('GET', 'http://localhost:3000/articulos/' + idProd, true);
+	http.send();
+	http.addEventListener('readystatechange', function() 
+		{
+			if(http.readyState === 4 && http.status === 200) {
+								console.log(http.responseText);
+								document.getElementById("productInfo").innerHTML = http.responseText;
+		}
+	});
+
+}
+	
+function getIdJson()
+{	
+	var http = new XMLHttpRequest();
+	http.open('GET', 'http://localhost:3000/articulos/' + idProd, true);
+	http.send();
+	http.addEventListener('readystatechange', function() {
+			if(http.readyState === 4 && http.status === 200) {
+				// JSON.parse transforma string (con un JSON válido) en un objeto JSON
+				var prod = JSON.parse(http.responseText); // prod = {"id": “valor id”, "nombre":"nombre del articulo"..... }
+				console.log(prod);
+				var p = document.createElement('p');
+				p.textContent = prod.id+ "   "+ prod.nombre;
+				document.getElementById("productInfo").appendChild(p);
+			}
+	});
+}
+
+
+function postText()
+{	
+	var prod={
+				"id": 99,
+				"nombre": "HP 1500L",
+				"descripcion": "Impresora Laserxxxx",
+				"precio": 200
+			};
+	
+	var http = new XMLHttpRequest();
+	http.open('POST', 'http://localhost:3000/articulos', true);
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	queryString="id="+prod.id+"&nombre="+prod.nombre+"&descripcion="+prod.descripcion+"&precio="+prod.precio;
+	http.send(queryString);
+	http.addEventListener('readystatechange', function() {
+			if(http.readyState === 4 && http.status === 200) {
+				if(parseInt(http.responseText) === 1) alert("Todo ha ido bien");
+				else alert("Ha habido un error al añadir el producto");
+			}
+	});
+}
+	
+function postJson()
+{	
+	var prod2={
+				"id": 105,
+				"nombre": "HP2 1500L",
+				"descripcion": "xxxxxxImpresora Laser",
+				"precio": 200
+			};
+	
+	var http = new XMLHttpRequest();
+	http.open('POST', 'http://localhost:3000/articulos', true);
+	//http.setRequestHeader("Content-type", "application/json");
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	http.send(JSON.stringify(prod2));
+	http.addEventListener('readystatechange', function() {
+			if(http.readyState === 4 && http.status === 200) {
+				if(parseInt(http.responseText) === 1) alert("Todo ha ido bien");
+				else alert("Ha habido un error al añadir el producto");
+			}
+	});	
+}
+
+</script>
+</head>
+<body>
+
+<button onclick="getText()">GET Todos Texto</button>
+<button onclick="getJson()">GET Todos Json</button>
+<button onclick="getIdText()">GET Por Id Texto</button>
+<button onclick="getIdJson()">GET Por Id Json</button>
+<button onclick="postText()">POST queryString</button>
+<button onclick="postJson()">POST Json</button>
+<button >PUT</button>
+<button >DELETE</button>
+<button >PATCH</button>
+
+<div id="productInfo"></div>
+
+</body>
+</html>
